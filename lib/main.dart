@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_console/ui/screen/animation/animation_screen.dart';
 import 'ui/screen/main_screen.dart';
 
 void main() {
@@ -16,8 +17,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurpleAccent.shade100,
+        ),
       ),
-      home: const MainScreen(),
+      home: const AnimationScreen(),
     );
   }
 }
