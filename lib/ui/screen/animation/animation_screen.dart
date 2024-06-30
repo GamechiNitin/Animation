@@ -24,8 +24,9 @@ class AnimationScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            ListView.builder(
+            ListView.separated(
               shrinkWrap: true,
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
               physics: const NeverScrollableScrollPhysics(),
               itemCount: animationList.length,
               itemBuilder: (_, index) => GestureDetector(
