@@ -9,19 +9,18 @@ class AnimationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightGreen.withOpacity(0.8),
         title: const Text(
           'Animation',
           style: TextStyle(
             fontWeight: FontWeight.w400,
             wordSpacing: 1,
             letterSpacing: 0.8,
-            color: Colors.white,
+            // color: Colors.white,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(12),
         child: Column(
           children: [
             ListView.separated(
@@ -39,14 +38,31 @@ class AnimationScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16),
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(Radius.circular(8)),
-                    color: animationList[index].color ??
-                        Colors.deepOrange.withOpacity(0.2),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        animationList[index].color!,
+                        animationList[index].color2!,
+                      ],
+                    ),
                   ),
                   child: ListTile(
                     dense: true,
-                    contentPadding: const EdgeInsets.all(0),
+                    contentPadding: const EdgeInsets.only(right: 16),
                     title: Text(
                       animationList[index].name,
+                    ),
+                    subtitle: Text(
+                      animationList[index].description,
+                      // style: const TextStyle(
+                      //   fontWeight: FontWeight.w400,
+                      //   wordSpacing: 1,
+                      //   letterSpacing: 0.8,
+                      // ),
+                    ),
+                    trailing: const Icon(
+                      Icons.chevron_right,
                     ),
                   ),
                 ),

@@ -17,12 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        appBarTheme: AppBarTheme(
-          iconTheme: const IconThemeData(
-            color: Colors.white,
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.black87,
           ),
-          centerTitle: true,
-          backgroundColor: Colors.deepPurpleAccent.shade100,
+          // backgroundColor: Colors.white,
         ),
       ),
       home: const AnimationScreen(),
