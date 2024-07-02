@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_console/ui/screen/animation/animation_screen.dart';
+import 'package:flutter_console/ui/screen/animation/data/animation_model.dart';
+import 'package:flutter_console/ui/screen/screen/auth/login/screen_list.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -33,7 +35,7 @@ class MainScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(12)),
-                      color: Colors.lightGreen.withOpacity(0.2),
+                      color: fetchColor(),
                     ),
                     child: const Text('Animation'),
                   ),
@@ -42,9 +44,24 @@ class MainScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(Radius.circular(12)),
-                    color: Colors.deepOrange.withOpacity(0.2),
+                    color: fetchColor(),
                   ),
                   child: const Text('Widget'),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (builder) => const ScreenList(),
+                    ),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      color: fetchColor(),
+                    ),
+                    child: const Text('Screen'),
+                  ),
                 ),
               ],
             ),

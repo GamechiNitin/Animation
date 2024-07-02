@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_console/ui/screen/animation/animation_screen.dart';
 import 'ui/screen/main_screen.dart';
 
 void main() {
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
           // backgroundColor: Colors.white,
         ),
       ),
-      home: const AnimationScreen(),
+      home: const MainScreen(),
     );
   }
 }
