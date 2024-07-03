@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'data/screen_model.dart';
 
-class ScreenList extends StatelessWidget {
-  const ScreenList({super.key});
+import 'list/data/list_model.dart';
+
+class ListScreen extends StatelessWidget {
+  const ListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Screen',
+          'List',
           style: TextStyle(
             fontWeight: FontWeight.w400,
             wordSpacing: 1,
@@ -26,11 +27,11 @@ class ScreenList extends StatelessWidget {
               shrinkWrap: true,
               separatorBuilder: (context, index) => const SizedBox(height: 16),
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: screenList.length,
+              itemCount: listScreen.length,
               itemBuilder: (_, index) => GestureDetector(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (builder) => screenList[index].navigator,
+                    builder: (builder) => listScreen[index].navigator,
                   ),
                 ),
                 child: Container(
@@ -41,8 +42,8 @@ class ScreenList extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        screenList[index].color!,
-                        screenList[index].color2!,
+                        listScreen[index].color!,
+                        listScreen[index].color2!,
                       ],
                     ),
                   ),
@@ -50,7 +51,7 @@ class ScreenList extends StatelessWidget {
                     dense: true,
                     contentPadding: const EdgeInsets.only(right: 16),
                     title: Text(
-                      screenList[index].name,
+                      listScreen[index].name,
                     ),
                     trailing: const Icon(
                       Icons.chevron_right,

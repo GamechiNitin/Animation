@@ -3,16 +3,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_console/ui/screen/screen/auth/login/login_screen.dart';
+import 'package:flutter_console/ui/screen/screen/list_screen.dart';
 
 class ScreenModel {
   String name;
-  String description;
+  String? description;
   Widget navigator;
   Color? color;
   Color? color2;
   ScreenModel({
     required this.name,
-    required this.description,
+    this.description,
     required this.navigator,
     this.color,
     this.color2,
@@ -31,18 +32,24 @@ Color fetchColor() {
 
 List<ScreenModel> screenList = [
   ScreenModel(
-    name: 'Login Screen',
-    description:
-        'Tween animation with animation contoller \n Fade Transition | Slide Transition | Scale Transition',
+    name: 'LogIn Screen',
+    // description: '',
     color: fetchColor(),
     color2: fetchColor(),
     navigator: const LogInScreen(),
   ),
   ScreenModel(
     name: 'SignUp Screen',
-    description: 'Tween animation with animation contoller',
+    // description: '',
     color: fetchColor(),
     color2: fetchColor(),
     navigator: const LogInScreen(),
+  ),
+  ScreenModel(
+    name: 'List Screen',
+    // description: '',
+    color: fetchColor(),
+    color2: fetchColor(),
+    navigator: const ListScreen(),
   ),
 ];
