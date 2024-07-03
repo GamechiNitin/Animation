@@ -1,6 +1,4 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ButtonScreen extends StatefulWidget {
   const ButtonScreen({super.key});
@@ -11,19 +9,6 @@ class ButtonScreen extends StatefulWidget {
 
 class _ButtonScreenState extends State<ButtonScreen> {
   bool isExpanded = false;
-
-  static List<Color> fetchColor() {
-    final rand = Random();
-    return List.generate(
-      10,
-      (index) => Color.fromRGBO(
-        rand.nextInt(256),
-        rand.nextInt(256),
-        rand.nextInt(256),
-        0.9,
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {

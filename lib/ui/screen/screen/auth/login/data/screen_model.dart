@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_console/ui/screen/screen/auth/login/login_screen.dart';
-import 'package:flutter_console/ui/screen/screen/list_screen.dart';
+import 'package:flutter_console/ui/screen/screen/list/list_screen.dart';
 
 class ScreenModel {
   String name;

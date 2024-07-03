@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'data/loading_data.dart';
 
-import 'list/data/list_model.dart';
-
-class ListScreen extends StatelessWidget {
-  const ListScreen({super.key});
+class LogInScreen extends StatelessWidget {
+  const LogInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'List',
+          'Loading',
           style: TextStyle(
             fontWeight: FontWeight.w400,
             wordSpacing: 1,
@@ -27,11 +26,11 @@ class ListScreen extends StatelessWidget {
               shrinkWrap: true,
               separatorBuilder: (context, index) => const SizedBox(height: 16),
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: listScreen.length,
+              itemCount: loadingList.length,
               itemBuilder: (_, index) => GestureDetector(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (builder) => listScreen[index].navigator,
+                    builder: (builder) => loadingList[index].navigator,
                   ),
                 ),
                 child: Container(
@@ -42,8 +41,8 @@ class ListScreen extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        listScreen[index].color!,
-                        listScreen[index].color2!,
+                        loadingList[index].color!,
+                        loadingList[index].color2!,
                       ],
                     ),
                   ),
@@ -51,7 +50,15 @@ class ListScreen extends StatelessWidget {
                     dense: true,
                     contentPadding: const EdgeInsets.only(right: 16),
                     title: Text(
-                      listScreen[index].name,
+                      loadingList[index].name,
+                    ),
+                    subtitle: Text(
+                      loadingList[index].description ?? "",
+                      // style: const TextStyle(
+                      //   fontWeight: FontWeight.w400,
+                      //   wordSpacing: 1,
+                      //   letterSpacing: 0.8,
+                      // ),
                     ),
                     trailing: const Icon(
                       Icons.chevron_right,
